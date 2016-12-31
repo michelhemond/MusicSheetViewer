@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="SteveHemond.Controls.PdfViewer.PdfViewerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="One">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding Page1}"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="Two">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="{Binding Page1}"/>
+                <Image Grid.Column="1" Source="{Binding Page2}"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Pivot x:Name="myPivot" ItemTemplate="{StaticResource Two}" SizeChanged="myPivot_SizeChanged">
+            <Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="1"/>
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+        </Pivot>
+    </Grid>
+</UserControl>
