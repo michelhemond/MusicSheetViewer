@@ -8,7 +8,7 @@ using Windows.Storage;
 
 namespace SteveHemond.MusicSheetViewer.ViewModels
 {
-    public class PdfDisplayPageViewModel : ViewModelBase
+    public class PresentationViewModel : ViewModelBase
     {
         public bool IsFullScreen { get { return ApplicationView.GetForCurrentView().IsFullScreen; } }
 
@@ -18,10 +18,14 @@ namespace SteveHemond.MusicSheetViewer.ViewModels
             get { return pdfFile; }
             set { SetProperty(ref pdfFile, value); }
         }
+        public PresentationViewModel()
+        {
+            
+        }
 
         public override async void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
         {
-            ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
+            //ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
             var picker = new FileOpenPicker();
             picker.FileTypeFilter.Add(".pdf");
             PdfFile = await picker.PickSingleFileAsync();

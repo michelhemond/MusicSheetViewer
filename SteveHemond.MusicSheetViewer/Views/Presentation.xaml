@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SteveHemond.MusicSheetViewer.Views.PdfDisplayPage"
+    x:Class="SteveHemond.MusicSheetViewer.Views.Presentation"
     xmlns:controls="using:Windows.Data.Pdf"
     xmlns:prism="using:Prism.Windows.Mvvm"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -8,17 +8,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sh="using:SteveHemond.Controls.PdfViewer"
-    prism:ViewModelLocator.AutoWireViewModel="True"
+    xmlns:viewModels="using:SteveHemond.MusicSheetViewer.ViewModels"
     mc:Ignorable="d">
 
-    <SplitView DisplayMode="CompactInline" CompactPaneLength="100">
-        <SplitView.Pane>
-            <StackPanel Orientation="Vertical">
-                
-            </StackPanel>         
-        </SplitView.Pane>
-        <SplitView.Content>
-            <sh:PdfViewerControl Source="{Binding PdfFile}"/>
-        </SplitView.Content>
-    </SplitView>
+    <Grid>
+    </Grid>
 </Page>
