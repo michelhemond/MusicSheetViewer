@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="SteveHemond.MusicSheetViewer.Views.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SteveHemond.MusicSheetViewer.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:SteveHemond.MusicSheetViewer.ViewModels"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:ShellViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <controls:HamburgerMenu x:Name="hamburgerMenu"
+            ItemsSource="{Binding MenuItems}" 
+            ItemClick="HamburgerMenuControl_ItemClick"
+            OpenPaneLength="240"
+            PaneBackground="#222"
+            DisplayMode="CompactInline"
+            CompactPaneLength="48"
+            HamburgerHeight="48"
+            IsPaneOpen="False">
+            <controls:HamburgerMenu.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Height="60">
+                        <TextBlock Padding="10,5" FontFamily="Segoe MDL2 Assets" Width="48" FontSize="28" Text="{Binding Icon}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <TextBlock FontSize="16" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </controls:HamburgerMenu.ItemTemplate>
+            <controls:HamburgerMenu.Content>
+                <Frame x:Name="contentFrame" />
+            </controls:HamburgerMenu.Content>
+        </controls:HamburgerMenu>
+    </Grid>
+</Page>

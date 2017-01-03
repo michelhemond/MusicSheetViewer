@@ -16,25 +16,6 @@
     </Page.DataContext>
 
     <Grid>
-        <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-            ItemsSource="{Binding MenuItems}" 
-            OpenPaneLength="240"
-            PaneBackground="#222"
-            DisplayMode="CompactInline"
-            CompactPaneLength="48"
-            HamburgerHeight="48"
-            IsPaneOpen="False">
-            <controls:HamburgerMenu.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Height="60">
-                        <TextBlock Padding="10,5" FontFamily="Segoe MDL2 Assets" Width="48" FontSize="28" Text="{Binding Icon}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <TextBlock FontSize="16" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </StackPanel>
-                </DataTemplate>
-            </controls:HamburgerMenu.ItemTemplate>
-            <controls:HamburgerMenu.Content>
-                hehehe
-            </controls:HamburgerMenu.Content>
-        </controls:HamburgerMenu>
+        <TextBlock FontSize="72" Text="HELLO !"/>
     </Grid>
 </Page>

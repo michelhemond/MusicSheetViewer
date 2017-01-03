@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Windows.Storage.Pickers;
 using Windows.UI.ViewManagement;
 using Windows.Storage;
+using System.Threading.Tasks;
 
 namespace SteveHemond.MusicSheetViewer.ViewModels
 {
@@ -20,12 +21,17 @@ namespace SteveHemond.MusicSheetViewer.ViewModels
         }
         public PresentationViewModel()
         {
-            
+            GetFile();
         }
 
         public override async void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
         {
             //ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
+            
+        }
+
+        public async void GetFile()
+        {
             var picker = new FileOpenPicker();
             picker.FileTypeFilter.Add(".pdf");
             PdfFile = await picker.PickSingleFileAsync();

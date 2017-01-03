@@ -8,9 +8,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sh="using:SteveHemond.Controls.PdfViewer"
-    xmlns:viewModels="using:SteveHemond.MusicSheetViewer.ViewModels"
+    xmlns:vm="using:SteveHemond.MusicSheetViewer.ViewModels"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <vm:PresentationViewModel/>
+    </Page.DataContext>
+    
     <Grid>
+        <sh:PdfViewerControl Source="{Binding PdfFile}"/>
     </Grid>
 </Page>
