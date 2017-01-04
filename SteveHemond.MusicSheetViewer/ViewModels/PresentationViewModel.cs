@@ -1,33 +1,20 @@
-﻿using Prism.Windows.Mvvm;
-using Prism.Windows.Navigation;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Windows.Storage.Pickers;
 using Windows.UI.ViewManagement;
 using Windows.Storage;
-using System.Threading.Tasks;
+using Caliburn.Micro;
 
 namespace SteveHemond.MusicSheetViewer.ViewModels
 {
-    public class PresentationViewModel : ViewModelBase
+    public class PresentationViewModel : Screen
     {
         public bool IsFullScreen { get { return ApplicationView.GetForCurrentView().IsFullScreen; } }
 
-        private StorageFile pdfFile;
-        public StorageFile PdfFile
-        {
-            get { return pdfFile; }
-            set { SetProperty(ref pdfFile, value); }
-        }
+        public StorageFile PdfFile { get; set; }
+
         public PresentationViewModel()
         {
             GetFile();
-        }
-
-        public override async void OnNavigatedTo(NavigatedToEventArgs e, Dictionary<string, object> viewModelState)
-        {
-            //ApplicationView.GetForCurrentView().TryEnterFullScreenMode();
-            
         }
 
         public async void GetFile()

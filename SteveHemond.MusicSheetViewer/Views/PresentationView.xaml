@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SteveHemond.MusicSheetViewer.Views.Presentation"
+    x:Class="SteveHemond.MusicSheetViewer.Views.PresentationView"
     xmlns:controls="using:Windows.Data.Pdf"
     xmlns:prism="using:Prism.Windows.Mvvm"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

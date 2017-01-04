@@ -95,19 +95,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NavigationService.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Messages\ResumeStateMessage.cs" />
+    <Compile Include="Messages\SuspendStateMessage.cs" />
+    <Compile Include="ViewModels\WelcomeViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="Views\Main.xaml.cs">
-      <DependentUpon>Main.xaml</DependentUpon>
+    <Compile Include="Views\WelcomeView.xaml.cs">
+      <DependentUpon>WelcomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Presentation.xaml.cs">
-      <DependentUpon>Presentation.xaml</DependentUpon>
+    <Compile Include="Views\PresentationView.xaml.cs">
+      <DependentUpon>PresentationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PresentationViewModel.cs" />
-    <Compile Include="Views\Shell.xaml.cs">
-      <DependentUpon>Shell.xaml</DependentUpon>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -130,15 +131,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\Main.xaml">
+    <Page Include="Views\WelcomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Presentation.xaml">
+    <Page Include="Views\PresentationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Shell.xaml">
+    <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

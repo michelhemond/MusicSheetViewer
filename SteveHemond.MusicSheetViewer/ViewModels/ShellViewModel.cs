@@ -1,18 +1,14 @@
-﻿using Prism.Windows.Mvvm;
+﻿using Caliburn.Micro;
 using SteveHemond.MusicSheetViewer.Data;
 using SteveHemond.MusicSheetViewer.Views;
 using System.Collections.ObjectModel;
 
 namespace SteveHemond.MusicSheetViewer.ViewModels
 {
-    public class ShellViewModel : ViewModelBase
+    public class ShellViewModel : Screen
     {
-        private MenuItem selectedItem;
-        public MenuItem SelectedItem
-        {
-            get { return selectedItem; }
-            set { SetProperty(ref selectedItem, value); }
-        }
+        public MenuItem SelectedItem { get; set; }
+
         public ShellViewModel()
         {
             MenuItems = GetMenuItems();
@@ -22,8 +18,8 @@ namespace SteveHemond.MusicSheetViewer.ViewModels
         {
             return new ObservableCollection<MenuItem>
             {
-                new MenuItem { Icon = "\uE10F", Name = "Accueil", Target = typeof(Main) },
-                new MenuItem { Icon = "\uE77B", Name = "Présentation", Target = typeof(Presentation) }
+                new MenuItem { Icon = "\uE10F", Name = "Accueil", Target = typeof(WelcomeView) },
+                new MenuItem { Icon = "\uE77B", Name = "Présentation", Target = typeof(PresentationView) }
             };
         }
 

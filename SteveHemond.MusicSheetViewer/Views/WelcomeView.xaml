@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SteveHemond.MusicSheetViewer.Views.Main"
+    x:Class="SteveHemond.MusicSheetViewer.Views.WelcomeView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SteveHemond.MusicSheetViewer"
@@ -12,7 +12,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <vm:MainViewModel/>
+        <vm:WelcomeViewModel/>
     </Page.DataContext>
 
     <Grid>
