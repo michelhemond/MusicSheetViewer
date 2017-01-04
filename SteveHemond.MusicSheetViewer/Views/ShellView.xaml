@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:SteveHemond.MusicSheetViewer.ViewModels"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:cm="using:Caliburn.Micro"
     mc:Ignorable="d">
 
     <Grid>
@@ -20,14 +21,14 @@
             IsPaneOpen="False">
             <controls:HamburgerMenu.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Height="60">
+                    <StackPanel Orientation="Horizontal" Height="60" cm:Message.Attach="[Event Tapped] = [NavigateTo($source)]">
                         <TextBlock Padding="10,5" FontFamily="Segoe MDL2 Assets" Width="48" FontSize="28" Text="{Binding Icon}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         <TextBlock FontSize="16" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </StackPanel>
                 </DataTemplate>
             </controls:HamburgerMenu.ItemTemplate>
             <controls:HamburgerMenu.Content>
-                <Frame x:Name="contentFrame" />
+                <Frame cm:Message.Attach="[Event Loaded] = [SetupNavigationService($source)]" DataContext="{x:Null}" />
             </controls:HamburgerMenu.Content>
         </controls:HamburgerMenu>
     </Grid>

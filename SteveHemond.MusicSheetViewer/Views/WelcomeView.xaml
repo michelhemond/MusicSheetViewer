@@ -5,15 +5,10 @@
     xmlns:local="using:SteveHemond.MusicSheetViewer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:prism="using:Prism.Windows.Mvvm"
     xmlns:vm="using:SteveHemond.MusicSheetViewer.ViewModels"
     xmlns:data="using:SteveHemond.MusicSheetViewer.Data"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d">
-
-    <Page.DataContext>
-        <vm:WelcomeViewModel/>
-    </Page.DataContext>
 
     <Grid>
         <TextBlock FontSize="72" Text="HELLO !"/>
