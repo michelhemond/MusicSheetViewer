@@ -38,7 +38,8 @@ namespace SteveHemond.MusicSheetViewer
 
             this.container
                 .PerRequest<ShellViewModel>()
-                .PerRequest<WelcomeViewModel>();
+                .PerRequest<WelcomeViewModel>()
+                .PerRequest<PresentationViewModel>();
 
             // ToDo: Change path to view and viewmodels folder in different assemblies if necessary.
             ////Override the default subnamespaces

@@ -10,7 +10,16 @@ namespace SteveHemond.MusicSheetViewer.ViewModels
     {
         public bool IsFullScreen { get { return ApplicationView.GetForCurrentView().IsFullScreen; } }
 
-        public StorageFile PdfFile { get; set; }
+        private StorageFile pdfFile;
+        public StorageFile PdfFile
+        {
+            get { return pdfFile; }
+            set
+            {
+                pdfFile = value;
+                NotifyOfPropertyChange(() => PdfFile);
+            }
+        }
 
         public PresentationViewModel()
         {
