@@ -19,7 +19,8 @@ namespace SteveHemond.MusicSheetViewer.ViewModels
             return new ObservableCollection<MenuItem>
             {
                 new MenuItem { Icon = "\uE10F", Name = "Accueil", Target = typeof(WelcomeView) },
-                new MenuItem { Icon = "\uE77B", Name = "Présentation", Target = typeof(PresentationView) }
+                new MenuItem { Icon = "\uE82D", Name = "Bibliothèque", Target = typeof(LibraryView) },
+                new MenuItem { Icon = "\uE173", Name = "Listes de lecture", Target = typeof(PlaylistView) }
             };
         }
 
